@@ -135,7 +135,7 @@ string Card::get_english_rank() const {
    string rankName;
    switch (rank) {
       case AS:
-         rankName = "1";
+         rankName = "Ace";
          break;
       case DOS:
          rankName = "2";
@@ -156,13 +156,13 @@ string Card::get_english_rank() const {
          rankName = "7";
          break;
       case SOTA:
-         rankName = "10";
+         rankName = "Jack";
          break;
       case CABALLO:
-         rankName = "11";
+         rankName = "Queen";
          break;
       case REY:
-         rankName = "12";
+         rankName = "King";
          break;
       default: break;
    }
