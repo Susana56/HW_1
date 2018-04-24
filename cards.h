@@ -75,8 +75,11 @@ class Player {
       // Constructor. 
       //    Assigns initial amount of money
       Player(int m);
+      
+      void increase(int change);
 
-      // You decide what functions you'll need...
+      void decrease(int change);
+
 
    private:
       int money;
