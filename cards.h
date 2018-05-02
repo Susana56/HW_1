@@ -3,13 +3,12 @@
 
    Interface of a simple Card class
    ************************************* */
+#ifndef CARDS_H
+#define CARDS_H
 
 #include <string>
 #include <vector>
 #include <fstream>
-
-#ifndef CARDS_H
-#define CARDS_H
 
 using namespace std;
 
@@ -60,13 +59,12 @@ private:
 
 class Hand {
    public:
-      // A vector of Cards
       Hand();
-
-      // You decide what functions you'll need...
+      void new_card(Card& A);
 
    private:
-      // You decide what fields you'll need...
+      vector<Card> vec;
+      int total_value;
 };
 
 
@@ -79,8 +77,9 @@ class Player {
       void increase(int change);
 
       void decrease(int change);
-
-
+      
+      int get_amount() const;
+ 
    private:
       int money;
       // You decide what extra fields (if any) you'll need...

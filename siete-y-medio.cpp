@@ -16,8 +16,13 @@ using namespace std;
 // Non member functions implementations (if any)
 
 
-// Stub for main
 int main(){
-   /* --STATEMENTS-- */
-   return 0;
+   int bet;
+   Player A(100);
+
+   cout << "You have $" << A.get_amount() << ". Enter bet: ";
+   
+   cin >> bet;
+  
+    return 0;
 }
