@@ -183,7 +183,13 @@ bool Card::operator < (Card card2) const {
    return rank < card2.rank;
 }
 
-
+double Card::get_value() const{
+   if (rank == 10 || rank == 11 || rank == 12){
+      return .5; 
+   }
+   else 
+      return rank;
+}
 
 /* *************************************************
    Hand class
@@ -192,9 +198,12 @@ Hand::Hand():total_value(0) {}
 
 void Hand::new_card( Card& A){
    vec.push_back(A);
-   total_value += A.get_rank();
+   total_value += A.get_value();
 }
 
+double Hand::get_total_value() const{
+   return total_value;
+}
 
 /* *************************************************
    Player class
