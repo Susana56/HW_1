@@ -57,6 +57,7 @@ int main(){
       }		
     
 	if(A_hand.get_total_value() > 7.5){
+		cout << "Your total is " << A_hand.get_total_value() << ". \n";
 		cout << "Too bad. You lose "<< bet << ". \n";
 		A.decrease(bet);
 		continue;
