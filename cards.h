@@ -64,9 +64,10 @@ class Hand {
       Hand();
       void new_card(Card& A);
       double get_total_value() const;
-
-   private:
+      
       vector<Card> vec;
+      
+   private:
       double total_value;
 };
 

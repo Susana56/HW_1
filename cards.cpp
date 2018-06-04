@@ -188,7 +188,7 @@ double Card::get_value() const{
       return .5; 
    }
    else 
-      return rank;
+      return this->get_rank();
 }
 
 /* *************************************************
