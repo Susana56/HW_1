@@ -22,10 +22,10 @@ int main(){
    int bet;
    Player A(100);
    Player House(900);
-   Hand A_hand;
    
    while (A.get_amount() > 0 && House.get_amount() > 0 ){
-  	cout << "You have $" << A.get_amount() << ". Enter bet: ";
+  	Hand A_hand;
+	cout << "You have $" << A.get_amount() << ". Enter bet: ";
    
    	cin >> bet; 
    	cout << "Your cards: \n" ;
@@ -41,7 +41,7 @@ int main(){
         	cout << "New card: \n" ;
 		Card new_A;
 		A_hand.new_card(new_A);
-        	cout << "\t" << new_A.get_spanish_rank() << " de " << new_A.get_spanish_suit() << "\t(" << new_A.get_english_rank() << " of " << new_A.get_english_suit ()<<  ").\n";
+        	cout << "\t" << new_A.get_spanish_rank() << " de " << new_A.get_spanish_suit() << "\t(" << new_A.get_english_rank() << " of " << new_A.get_english_suit ()<<  ").\n\n";
 	
         	cout << "Your cards: \n" ;
         	for(int i = 0; i < A_hand.vec.size() ; ++i){
@@ -66,9 +66,9 @@ int main(){
     	Hand Dealer;
     	Card Dealer_first;
     	Dealer.new_card(Dealer_first);
-    	cout << "Dealer's cards: " <<  Dealer.vec[0].get_spanish_rank() << " de " << Dealer.vec[0].get_spanish_suit() << "\t(" << Dealer.vec[0].get_english_rank() << " of " << Dealer.vec[0].get_english_suit ()<<  ").\n";
+    	cout << "Dealer's cards: \n\t" <<  Dealer.vec[0].get_spanish_rank() << " de " << Dealer.vec[0].get_spanish_suit() << "\t(" << Dealer.vec[0].get_english_rank() << " of " << Dealer.vec[0].get_english_suit ()<<  ").\n";
     
-    	cout << "The dealer's total is " << Dealer.get_total_value() << ". \n";
+    	cout << "The dealer's total is " << Dealer.get_total_value() << ". \n\n";
     	while( Dealer.get_total_value() < 7.5 ){
     		if(Dealer.get_total_value() > A_hand.get_total_value()){
                 	break;
@@ -81,36 +81,36 @@ int main(){
                 Dealer.new_card(new_dealer);
 		cout << "New Card: \n";
          
-		cout << "\t" << new_dealer.get_spanish_rank() << " de " << new_dealer.get_spanish_suit() << "\t(" << new_dealer.get_english_rank() << " of " << new_dealer.get_english_suit ()<<  ").\n";
+		cout << "\t" << new_dealer.get_spanish_rank() << " de " << new_dealer.get_spanish_suit() << "\t(" << new_dealer.get_english_rank() << " of " << new_dealer.get_english_suit ()<<  ").\n\n";
         
         	cout << "Dealer's cards: \n" ;
         	for(int i = 0; i < Dealer.vec.size() ; ++i){
                  	cout << "\t" << Dealer.vec[i].get_spanish_rank() << " de " << Dealer.vec[i].get_spanish_suit() << "\t(" << Dealer.vec[i].get_english_rank() << " of " << Dealer.vec[i].get_english_suit ()<<  ").\n";
                 }
          
-        	 cout << "The dealer's total is " << Dealer.get_total_value() << " .\n" ;
+        	 cout << "The dealer's total is " << Dealer.get_total_value() << " .\n\n" ;
      }
      
 	if(Dealer.get_total_value() > 7.5){
-		cout << "You win " << bet << ". \n";
+		cout << "You win " << bet << ". \n\n";
 		A.increase(bet);
 		House.decrease(bet);
   	}
 	else if(Dealer.get_total_value() > A_hand.get_total_value()){
-		cout << "Too bad. You lose " << bet << ".\n";
+		cout << "Too bad. You lose " << bet << ".\n\n";
 		A.decrease(bet);
 	}
 	else if(Dealer.get_total_value() == A_hand.get_total_value()){
-		cout << "Nobody wins!";
+		cout << "Nobody wins! \n\n";
 	}
 	
 }
 
-       if(A_hand.get_total_value() == 0){
-		cout << "You have $0. GAME OVER! \n Come back when you have more money.\n Bye!";
+       if(A.get_amount() == 0){
+		cout << "You have $0. GAME OVER! \nCome back when you have more money.\n\nBye! \n";
        }
        else{
-      		cout << "Congratulations. You beat the casino! \n Bye!";	
+      		cout << "Congratulations. You beat the casino! \nBye! \n";	
        }
     return 0;
 };
