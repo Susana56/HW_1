@@ -1,1 +1,1 @@
-# Try
+This is a program based on the "Siete-y-medio" game, similar to 21. The objecitive of the game is to get as close to 7.5 value in your hand of cards without "busting".You compete with the dealer to get closest to 7.5 in value. You start off with 100 in money and bet money for that round. If you bust, go over 7.5, you lose the round and the bet amount. If the dealer busts, you win the round and win the bet amount. If you and the dealer get the same amount of of value, Nobody wins. You keep playing rounds till you run out of money or the dealer loses 900.
