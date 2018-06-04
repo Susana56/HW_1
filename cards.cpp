@@ -184,7 +184,7 @@ bool Card::operator < (Card card2) const {
 }
 
 double Card::get_value() const{
-   if (rank == 10 || rank == 11 || rank == 12){
+   if (this->get_rank() == 10 ||this->get_rank() == 11 || this->get_rank() == 12){
       return .5; 
    }
    else 
