@@ -3,13 +3,12 @@
 
    Interface of a simple Card class
    ************************************* */
+#ifndef CARDS_H
+#define CARDS_H
 
 #include <string>
 #include <vector>
 #include <fstream>
-
-#ifndef CARDS_H
-#define CARDS_H
 
 using namespace std;
 
@@ -46,6 +45,8 @@ class Card {
       // Converts card rank to number.
       // The possible returns are: 1, 2, 3, 4, 5, 6, 7, 10, 11 and 12
       int get_rank() const;
+      
+      double get_value() const;
 
       // Compare rank of two cards. E.g: Eight<Jack is true.
       // Assume Ace is always 1. 
@@ -60,13 +61,14 @@ private:
 
 class Hand {
    public:
-      // A vector of Cards
       Hand();
-
-      // You decide what functions you'll need...
-
+      void new_card(Card& A);
+      double get_total_value() const;
+      
+      vector<Card> vec;
+      
    private:
-      // You decide what fields you'll need...
+      double total_value;
 };
 
 
@@ -75,9 +77,13 @@ class Player {
       // Constructor. 
       //    Assigns initial amount of money
       Player(int m);
+      
+      void increase(int change);
 
-      // You decide what functions you'll need...
-
+      void decrease(int change);
+      
+      int get_amount() const;
+ 
    private:
       int money;
       // You decide what extra fields (if any) you'll need...

@@ -135,7 +135,7 @@ string Card::get_english_rank() const {
    string rankName;
    switch (rank) {
       case AS:
-         rankName = "1";
+         rankName = "Ace";
          break;
       case DOS:
          rankName = "2";
@@ -156,13 +156,13 @@ string Card::get_english_rank() const {
          rankName = "7";
          break;
       case SOTA:
-         rankName = "10";
+         rankName = "Jack";
          break;
       case CABALLO:
-         rankName = "11";
+         rankName = "Queen";
          break;
       case REY:
-         rankName = "12";
+         rankName = "King";
          break;
       default: break;
    }
@@ -183,17 +183,42 @@ bool Card::operator < (Card card2) const {
    return rank < card2.rank;
 }
 
-
+double Card::get_value() const{
+   if (this->get_rank() == 10 ||this->get_rank() == 11 || this->get_rank() == 12){
+      return .5; 
+   }
+   else 
+      return this->get_rank();
+}
 
 /* *************************************************
    Hand class
    ************************************************* */
-// Implemente the member functions of the Hand class here.
+Hand::Hand():total_value(0) {}
 
+void Hand::new_card( Card& A){
+   vec.push_back(A);
+   total_value += A.get_value();
+}
 
+double Hand::get_total_value() const{
+   return total_value;
+}
 
 /* *************************************************
    Player class
    ************************************************* */
-// Implemente the member functions of the Player class here.
+Player::Player(int m): money(m){}
 
+int Player::get_amount() const{
+   return money;
+}
+
+void Player::increase( int change) {
+  money += change; 
+}
+
+void Player::decrease(int change) {
+   money -= change;
+}
+ 
